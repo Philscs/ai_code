@@ -1,0 +1,324 @@
+1. "Entwickle einen sicheren JWT-basierten Authentifizierungsmechanismus für eine REST API mit Node.js und Express. Implementiere Refresh Tokens, Token-Rotation und Blacklisting. Berücksichtige XSS- und CSRF-Schutz sowie sichere Cookie-Konfiguration."
+
+
+2. "Erstelle eine React-Komponente für File-Upload mit Drag & Drop. Implementiere:
+- Chunk-basiertes Uploading für große Dateien
+- Fortschrittsanzeige
+- Validierung von Dateitypen und -größen
+- Virenscanning-Integration
+- Schutz vor Path Traversal Attacken"
+
+
+3. "Entwickle einen Web Worker für komplexe Datenverarbeitung:
+```javascript
+// Basis-Struktur:
+self.onmessage = function(e) {
+  // TODO: Implementiere:
+  // - Parallele Verarbeitung von großen Datensätzen
+  // - Verschlüsselung sensitiver Daten
+  // - Fehlerbehandlung
+  // - Memory Management
+}
+```"
+
+
+4. "Implementiere ein reaktives State Management System ähnlich Redux, aber mit:
+- Immutable Updates
+- Middleware-System
+- DevTools Integration
+- Typ-Sicherheit
+- Circular Dependencies Prevention"
+
+
+5. "Erstelle eine sichere WebSocket-Verbindung für einen Real-Time Chat:
+- Implementiere Heartbeat-Mechanismus
+- Rate Limiting
+- Message Encryption
+- Reconnection Strategy
+- XSS Prevention in Messages"
+
+
+6. "Entwickle einen Custom Event Emitter mit JavaScript:
+```JavaScript
+interface EventEmitter {
+  on(event: string, callback: Function): void;
+  emit(event: string, data: any): void;
+  once(event: string, callback: Function): void;
+  // TODO: Erweitere um:
+  // - Event Prioritäten
+  // - Async Event Handling
+  // - Memory Leak Prevention
+}
+```"
+
+
+7. "Erstelle eine Performance-optimierte Virtual DOM Implementierung:
+- Diff Algorithmus
+- Batch Updates
+- Component Lifecycle
+- Event Delegation
+- Memory Management"
+
+
+8. "Entwickle einen sicheren OAuth 2.0 Client mit:
+- PKCE Flow
+- State Parameter Validation
+- Token Management
+- Secure Storage
+- Refresh Token Rotation"
+
+
+9. "Implementiere eine Graph-Datenstruktur mit verschiedenen Traversierungsalgorithmen:
+- DFS & BFS
+- Shortest Path
+- Cycle Detection
+- Memory Efficient Storage
+- Concurrent Access Safety"
+
+
+10. "Erstelle einen Service Worker für Progressive Web Apps:
+- Offline First Strategy
+- Cache Management
+- Push Notifications
+- Background Sync
+- Security Headers"
+
+
+11. "Entwickle eine JavaScript Decorator Library für:
+- Method Caching
+- Rate Limiting
+- Input Validation
+- Logging
+- Error Boundary"
+
+
+12. "Implementiere ein reaktives Form Handling System:
+- Two-Way Binding
+- Validation Rules Engine
+- Custom Controls
+- CSRF Protection
+- XSS Prevention"
+
+
+13. "Erstelle einen Memory-effizienten Stream Parser für große JSON Dateien:
+- Chunk Processing
+- Error Recovery
+- Schema Validation
+- Memory Usage Monitoring
+- DOS Protection"
+
+
+14. "Entwickle eine sichere IndexedDB Wrapper Library:
+- Encryption Layer
+- Migration System
+- Transaction Management
+- Quota Management
+- Data Sanitization"
+
+
+15. "Implementiere ein WebRTC Peer Connection Management System:
+- ICE Candidate Handling
+- Media Stream Security
+- Connection State Management
+- Bandwidth Control
+- TURN Server Integration"
+
+
+16. "Erstelle ein modulares API Gateway mit:
+- Request Validation
+- Rate Limiting
+- Circuit Breaker
+- Caching Layer
+- Authentication/Authorization"
+
+
+17. "Entwickle ein Pub/Sub System mit Redis Backend:
+- Message Queuing
+- Dead Letter Queue
+- Retry Mechanism
+- Monitoring
+- Security Controls"
+
+
+18. "Implementiere ein sicheres File System Access API Wrapper:
+- Quota Management
+- Virus Scanning
+- Access Control
+- Encryption
+- Audit Logging"
+
+
+19. "Erstelle eine Web Components Library mit:
+- Shadow DOM Encapsulation
+- Custom Elements Registry
+- Template System
+- Style Isolation
+- Security Boundaries"
+
+
+20. "Entwickle ein Type-Safe RPC System:
+- Schema Validation
+- Bi-directional Communication
+- Error Handling
+- Transport Layer Security
+- Rate Limiting"
+
+
+21. "Implementiere ein Browser Extension Framework:
+- Content Script Management
+- Message Passing
+- Storage API
+- CSP Compliance
+- Permission System"
+
+
+22. "Erstelle ein reaktives Caching System:
+- Cache Invalidation
+- Cache Warmup
+- Memory Management
+- Security Headers
+- DOS Prevention"
+
+
+23. "Entwickle eine GraphQL Subscription Implementation:
+- WebSocket Transport
+- Authentication
+- Rate Limiting
+- Schema Validation
+- Resource Protection"
+
+
+24. "Implementiere ein Web Audio Processing System:
+- Audio Worklet
+- Stream Processing
+- Memory Management
+- Security Controls
+- Resource Limitation"
+
+
+25. "Erstelle ein sicheres Cross-Origin Communication System:
+- postMessage Validation
+- Origin Verification
+- Content Security Policy
+- XSS Prevention
+- CSRF Protection"
+
+
+26. "Entwickle ein Modulsystem mit dynamischem Import:
+- Dependency Resolution
+- Circular Reference Detection
+- Code Splitting
+- Security Scanning
+- Resource Loading"
+
+
+27. "Implementiere ein Web Crypto API Wrapper:
+- Key Management
+- Encryption/Decryption
+- Digital Signatures
+- Secure Random
+- Key Rotation"
+
+
+28. "Erstelle ein Error Tracking System:
+- Stack Trace Processing
+- Source Map Support
+- PII Detection
+- Rate Limiting
+- Data Sanitization"
+
+
+29. "Entwickle ein Browser Storage Management System:
+- Quota Handling
+- Encryption Layer
+- Garbage Collection
+- Access Control
+- Version Control"
+
+
+30. "Implementiere ein Web Payment API Integration:
+- Payment Request API
+- Security Validation
+- Error Handling
+- Fraud Detection
+- Compliance Checks"
+
+
+31. "Erstelle eine JavaScript Transform Pipeline:
+- AST Processing
+- Code Generation
+- Security Analysis
+- Performance Optimization
+- Error Recovery"
+
+
+32. "Entwickle ein Browser Fingerprinting Prevention System:
+- Canvas Fingerprint Protection
+- Audio Fingerprint Protection
+- Font Enumeration Protection
+- Hardware Info Protection
+- Browser API Spoofing"
+
+
+33. "Implementiere ein Web Assembly Integration System:
+- Module Loading
+- Memory Management
+- Security Sandbox
+- Error Handling
+- Resource Limitation"
+
+
+34. "Erstelle ein Real-Time Collaboration System:
+- Operational Transform
+- Conflict Resolution
+- Presence System
+- Security Controls
+- Rate Limiting"
+
+
+35. "Entwickle ein Browser Extension Security System:
+- Content Security Policy
+- XSS Prevention
+- CSRF Protection
+- Privilege Separation
+- Update Mechanism"
+
+
+36. "Implementiere ein Service Mesh für Micro-Frontends:
+- Module Federation
+- Load Balancing
+- Circuit Breaking
+- Security Boundaries
+- Monitoring"
+
+
+37. "Erstelle ein Web Performance Monitoring System:
+- Metrics Collection
+- Real User Monitoring
+- Security Compliance
+- Privacy Controls
+- Resource Usage"
+
+
+38. "Entwickle ein Browser-basiertes P2P System:
+- WebRTC Data Channels
+- Peer Discovery
+- Security Controls
+- Resource Management
+- Rate Limiting"
+
+
+39. "Implementiere ein Progressive Enhancement System:
+- Feature Detection
+- Fallback Strategy
+- Security Controls
+- Performance Optimization
+- Accessibility"
+
+
+40. "Erstelle ein Cross-Platform Desktop Integration System:
+- Native API Bridge
+- IPC Communication
+- Security Sandbox
+- Resource Management
+- Update Mechanism"

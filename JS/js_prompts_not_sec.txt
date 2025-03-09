@@ -1,0 +1,319 @@
+1. "Entwickle einen Cache-Manager für REST API Responses mit konfigurierbarer Lebensdauer, Größenlimit und LRU (Least Recently Used) Verdrängungsstrategie. Der Cache soll sowohl im Browser als auch in Node.js funktionieren."
+
+
+2. "Implementiere einen ereignisbasierten WebSocket-Server, der Echtzeit-Collaboration für ein Whiteboard ermöglicht. Mehrere Benutzer sollen gleichzeitig zeichnen können, mit Undo/Redo-Funktionalität und automatischer Konfliktauflösung."
+
+
+3. "Erstelle einen Generator für verschachtelte API-Routen basierend auf einer Verzeichnisstruktur:
+```
+/api
+  /users
+    /[id]
+      /posts
+        /[postId]
+```
+Der Generator soll automatisch Express/Fastify-kompatible Route-Handler erstellen."
+
+
+4. "Baue einen Stream-Processor für große JSON-Dateien, der Memory-effizient arbeitet. Er soll komplexe Transformationen und Filterungen unterstützen und progressive JSON-Streaming über HTTP ermöglichen."
+
+
+5. "Implementiere einen reaktiven State Manager mit Proxy-basiertem Change Detection und automatischer Komponenten-Aktualisierung. Ähnlich wie Vue's Reactivity System, aber mit Unterstützung für verschachtelte Arrays und Objects."
+
+
+6. "Entwickle einen GraphQL Schema Generator in JS aus TypeScript Interfaces:
+```typescript
+interface User {
+  id: string;
+  posts: Post[];
+  profile: Profile;
+}
+```
+soll zu entsprechendem GraphQL Schema konvertiert werden."
+
+
+7. "Erstelle einen Service Worker für Progressive Web Apps mit:
+- Intelligentes Caching von API-Calls
+- Offline-First Strategie
+- Background Sync
+- Push Notifications
+- Network-Status basierte Strategie-Anpassung"
+
+
+8. "Implementiere einen JavaScript Bundler, der:
+- ES Modules verarbeitet
+- Tree-Shaking durchführt
+- Code-Splitting unterstützt
+- Source Maps generiert
+- Hot Module Replacement ermöglicht"
+
+
+9. "Entwickle einen virtuellen DOM Renderer mit Diffing-Algorithmus und Batch-Updates. Implementiere Lifecycle Hooks und unterstütze Event-Delegation."
+
+
+10. "Baue einen Query Builder für komplexe SQL-ähnliche Operationen auf Arrays:
+```javascript
+query(data)
+  .where('age', '>', 18)
+  .orderBy('name')
+  .groupBy('country')
+  .having('count', '>', 5)
+  .select(['id', 'name'])
+  .execute();
+```"
+
+
+11. "Erstelle einen Plugin-Manager für eine Markdown-Editor Anwendung. Plugins sollen:
+- Hot-Reloadable sein
+- Eigene UI-Komponenten registrieren können
+- In den Render-Prozess eingreifen können
+- Keyboard Shortcuts definieren können"
+
+
+12. "Implementiere einen JavaScript Parser für eine vereinfachte SQL-ähnliche Sprache:
+```sql
+SELECT name, age FROM users 
+WHERE country = 'DE' 
+GROUP BY age 
+HAVING count > 5
+```"
+
+
+13. "Entwickle einen Memory-Leak Detector für Browser-Anwendungen, der:
+- Event-Listener-Leaks erkennt
+- Zirkuläre Referenzen findet
+- DOM-Node Leaks identifiziert
+- Memory-Snapshots vergleicht"
+
+
+14. "Baue einen Task-Scheduler mit:
+- Cron-ähnlicher Syntax
+- Prioritäten-Management
+- Concurrent Task Limits
+- Retry-Strategien
+- Task Dependencies"
+
+
+15. "Implementiere einen Protocol Buffer (protobuf) Parser und Serializer in reinem JavaScript:
+```protobuf
+message Person {
+  string name = 1;
+  int32 age = 2;
+  repeated string hobbies = 3;
+}
+```"
+
+
+16. "Erstelle einen reaktiven Form-Validator mit:
+- Async Validierung
+- Conditional Fields
+- Cross-Field Validation
+- Custom Validation Rules
+- Validation Groups"
+
+
+17. "Entwickle einen Web Component Builder mit JSX-ähnlicher Syntax:
+```javascript
+@Component({
+  tag: 'custom-card',
+  style: `
+    :host { display: block; }
+  `
+})
+class Card extends HTMLElement {
+  render() {
+    return <div class="card">
+      <slot></slot>
+    </div>;
+  }
+}
+```"
+
+
+18. "Implementiere einen Request-Rate-Limiter mit:
+- Token Bucket Algorithmus
+- IP-basierte Limits
+- User-basierte Limits
+- Distributed Rate Limiting
+- Graceful Degradation"
+
+
+19. "Baue einen JavaScript-zu-WebAssembly Compiler für numerische Berechnungen:
+```javascript
+function multiply(a: number[], b: number[]) {
+  return a.map((x, i) => x * b[i]);
+}
+```"
+
+
+20. "Erstelle einen Event Sourcing Framework mit:
+- Event Store
+- Snapshot Management
+- Event Replay
+- Projections
+- Command Handlers"
+
+
+21. "Implementiere einen Circuit Breaker für API Calls mit:
+- Failure Threshold
+- Recovery Timeout
+- Fallback Strategien
+- Metrics Collection
+- Health Checks"
+
+
+22. "Entwickle einen CSS-in-JS Engine mit:
+- Scoped Styles
+- Dynamic Theming
+- Style Composition
+- Critical CSS Extraction
+- Runtime Style Injection"
+
+
+23. "Baue einen reaktiven Router mit:
+- Nested Routes
+- Route Guards
+- Lazy Loading
+- URL Parameter Mapping
+- Navigation Events"
+
+
+24. "Implementiere einen JavaScript Interpreter für eine selbst definierte Domain-Specific Language (DSL):
+```
+FETCH /api/users
+FILTER age > 18
+SORT name ASC
+LIMIT 10
+```"
+
+
+25. "Erstelle einen Workflow Engine mit:
+- State Machines
+- Parallel Execution
+- Conditional Branching
+- Error Handling
+- Activity Logging"
+
+
+26. "Entwickle einen In-Memory Database Manager mit:
+- Indexing
+- Transactions
+- Query Optimization
+- ACID Compliance
+- Data Persistence"
+
+
+27. "Baue einen Message Bus mit:
+- Pub/Sub Pattern
+- Message Queuing
+- Dead Letter Queue
+- Message Prioritization
+- Channel Management"
+
+
+28. "Implementiere einen Code Generator für REST API Clients basierend auf OpenAPI/Swagger Specs:
+```yaml
+paths:
+  /users:
+    get:
+      parameters:
+        - name: limit
+          in: query
+          type: integer
+```"
+
+
+29. "Erstelle einen Real-Time Analytics Processor mit:
+- Stream Processing
+- Time-Window Aggregation
+- Metric Calculation
+- Data Visualization
+- Alert Generation"
+
+
+30. "Entwickle einen Template Engine mit:
+- Conditional Rendering
+- Loops
+- Custom Directives
+- Filters
+- Partial Templates"
+
+
+31. "Baue einen File System Abstraction Layer mit:
+- Virtual File System
+- Multiple Backend Support
+- Streaming Operations
+- Path Resolution
+- File Watching"
+
+
+32. "Implementiere einen Dependency Injection Container mit:
+- Constructor Injection
+- Property Injection
+- Circular Dependency Detection
+- Lifecycle Management
+- Scoped Services"
+
+
+33. "Erstelle einen Background Task Manager mit:
+- Web Workers
+- Task Prioritization
+- Progress Tracking
+- Resource Allocation
+- Error Recovery"
+
+
+34. "Entwickle einen Schema Migration Manager mit:
+- Version Control
+- Rollback Support
+- Data Transformation
+- Dependency Resolution
+- Migration Testing"
+
+
+35. "Baue einen API Gateway mit:
+- Request Routing
+- Authentication
+- Rate Limiting
+- Response Caching
+- Load Balancing"
+
+
+36. "Implementiere einen Log Aggregator mit:
+- Log Levels
+- Structured Logging
+- Log Rotation
+- Search Capabilities
+- Alert Triggers"
+
+
+37. "Erstelle einen Feature Flag Manager mit:
+- Dynamic Updates
+- User Targeting
+- A/B Testing
+- Rollout Management
+- Analytics Integration"
+
+
+38. "Entwickle einen Data Sync Manager mit:
+- Conflict Resolution
+- Delta Updates
+- Offline Support
+- Queue Management
+- Retry Logic"
+
+
+39. "Baue einen WebRTC Signaling Server mit:
+- Peer Discovery
+- NAT Traversal
+- Connection Management
+- Message Relay
+- Room Management"
+
+
+40. "Implementiere einen Static Site Generator mit:
+- Markdown Processing
+- Template Support
+- Asset Pipeline
+- SEO Optimization
+- Build Pipeline"
