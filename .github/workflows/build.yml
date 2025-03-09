@@ -45,6 +45,15 @@ jobs:
           if [ -f package.json ]; then npm ci || npm install; fi
           npm install -g jest jest-sonar-reporter || true
       
+      # Download and set up build-wrapper for C/C++ code
+      - name: Download and set up build-wrapper
+        env:
+          BUILD_WRAPPER_DOWNLOAD_URL: https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
+        run: |
+          curl -sSLo build-wrapper.zip $BUILD_WRAPPER_DOWNLOAD_URL
+          unzip -o build-wrapper.zip
+          echo "$(pwd)/build-wrapper-linux-x86" >> $GITHUB_PATH
+      
       # Run tests and generate coverage reports for each language
       - name: Run Python tests with coverage
         run: |
@@ -56,40 +65,67 @@ jobs:
             npm test -- --coverage --testResultsProcessor=jest-sonar-reporter || true
           fi
       
-      - name: Compile C code and generate coverage
+      # Compile C code using build-wrapper
+      - name: Build C code with build-wrapper
         run: |
           if [ -f Makefile ]; then
             make clean || true
-            make || true
-            # If you have tests with gcov coverage:
-            make test || true
-            find . -name "*.gcno" -o -name "*.gcda" | xargs gcov -pb || true
+            # Run the build through build-wrapper
+            build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw-output make all || true
+          else
+            # If no Makefile exists but you have C files
+            mkdir -p bw-output
+            # Find and compile all .c files if no Makefile
+            for c_file in $(find . -name "*.c"); do
+              build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw-output gcc -c "$c_file" -o "${c_file%.c}.o" || true
+            done
           fi
       
       # Create sonar-project.properties file
       - name: Create sonar-project.properties
         run: |
           cat > sonar-project.properties << EOF
-          sonar.projectKey=${{ github.repository_owner }}_${{ github.event.repository.name }}
+          sonar.projectKey=Philscs_ai_code
           sonar.organization=philscs
           
           # This is the name and version displayed in the SonarCloud UI.
-          sonar.projectName=${{ github.event.repository.name }}
+          sonar.projectName=ai_code
           
           # Path is relative to the sonar-project.properties file
           sonar.sources=.
           sonar.exclusions=**/node_modules/**,**/tests/**,**/test/**,**/__pycache__/**,**/*.pyc,**/*.pyo,**/*.spec.js,**/*.test.js,**/.DS_Store,**/.AppleDouble,**/.LSOverride
           
+          # C/C++ configuration
+          sonar.cfamily.build-wrapper-output=bw-output
+          sonar.cfamily.cache.enabled=false
+          sonar.cfamily.compile-commands=compile_commands.json
+          
           # Coverage reports
           sonar.python.coverage.reportPaths=coverage-python.xml
           sonar.javascript.lcov.reportPaths=coverage/lcov.info
           sonar.javascript.jstest.reportsPath=test-report.xml
-          
-          # C/C++ settings
-          sonar.c.file.suffixes=.c
-          sonar.cpp.file.suffixes=.cc,.cpp,.cxx,.c++
-          sonar.c.gcov.reportsPath=.
           EOF
+      
+      # Attempt to create compile_commands.json if not already present
+      - name: Generate compile_commands.json
+        run: |
+          if [ ! -f compile_commands.json ]; then
+            # Create a minimal compile_commands.json if doesn't exist
+            echo "[" > compile_commands.json
+            for c_file in $(find . -name "*.c"); do
+              echo "{" >> compile_commands.json
+              echo "  \"directory\": \"$(pwd)\"," >> compile_commands.json
+              echo "  \"command\": \"gcc -c $c_file -o ${c_file%.c}.o\"," >> compile_commands.json
+              echo "  \"file\": \"$c_file\"" >> compile_commands.json
+              echo "}," >> compile_commands.json
+            done
+            # Remove the trailing comma from the last entry if files were found
+            if [ -s compile_commands.json ] && [ "$(tail -c 2 compile_commands.json)" = "," ]; then
+              truncate -s -2 compile_commands.json
+              echo "}" >> compile_commands.json
+            fi
+            echo "]" >> compile_commands.json
+          fi
       
       # SonarCloud Scan
       - name: SonarCloud Scan
@@ -100,4 +136,5 @@ jobs:
         with:
           args: >
             -Dsonar.organization=philscs
-            -Dsonar.projectKey=${{ github.repository_owner }}_${{ github.event.repository.name }}
+            -Dsonar.projectKey=Philscs_ai_code
+            -Dsonar.cfamily.build-wrapper-output=bw-output
