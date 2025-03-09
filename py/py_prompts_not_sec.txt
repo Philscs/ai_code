@@ -1,0 +1,118 @@
+1. Entwickle einen erweiterten Taschenrechner, der neben Grundrechenarten auch wissenschaftliche Berechnungen wie Wurzeln, Logarithmen und trigonometrische Funktionen unterstützt. Der Rechner soll eine Verlaufshistorie speichern und die Möglichkeit bieten, vorherige Ergebnisse in neue Berechnungen einzubinden.
+
+
+2. Erstelle ein System zur Verwaltung einer Bibliothek mit Büchern, Ausleihern und Ausleihvorgängen. Das System soll Mehrfachexemplare, Reservierungen, Mahnungen und eine Suchfunktion nach verschiedenen Kriterien (Autor, Titel, ISBN, Genre) unterstützen.
+
+
+3. Implementiere einen Texteditor mit Syntax-Highlighting für verschiedene Programmiersprachen, Undo/Redo-Funktionalität, automatischer Einrückung und der Möglichkeit, Makros aufzuzeichnen und abzuspielen.
+
+
+4. Entwickle ein Datenanalysetool für CSV-Dateien, das komplexe Filteroperationen, statistische Auswertungen, Gruppierungen und Visualisierungen ermöglicht. Implementiere auch die Möglichkeit, eigene Analysefunktionen zu definieren.
+
+
+5. Erstelle einen Webcrawler, der rekursiv Webseiten durchsucht, Links extrahiert und die gefundenen Daten in einer Graphdatenbank speichert. Implementiere verschiedene Crawling-Strategien und Rate-Limiting.
+
+
+6. Entwickle ein Verschlüsselungssystem, das verschiedene Algorithmen (AES, RSA, etc.) unterstützt und sowohl Datei- als auch Ordnerverschlüsselung ermöglicht. Integriere ein Schlüsselmanagement-System.
+
+
+7. Implementiere ein Versionskontrollsystem ähnlich Git mit Funktionen wie Branching, Merging, Commit-Historie und Konfliktresolution. Das System soll auch Binärdateien effizient verwalten können.
+
+
+8. Erstelle ein System zur Bildverarbeitung, das verschiedene Filter, Transformationen und Analysefunktionen bereitstellt. Implementiere auch Batch-Verarbeitung und die Möglichkeit, eigene Filter zu definieren.
+
+
+9. Entwickle einen Compiler für eine selbst definierte Programmiersprache, der Lexing, Parsing, semantische Analyse und Codegenerierung durchführt. Die Sprache soll grundlegende Kontrollstrukturen und Funktionen unterstützen.
+
+
+10. Implementiere ein verteiltes Chat-System mit Rooms, privaten Nachrichten, Dateiübertragung und Ende-zu-Ende-Verschlüsselung. Das System soll auch offline Nachrichten unterstützen.
+
+
+11. Erstelle ein System zur automatischen Generierung von Dokumentation aus Quellcode mit Unterstützung für verschiedene Dokumentationsformate und automatischer Erkennung von Code-Abhängigkeiten.
+
+
+12. Entwickle einen Task-Scheduler, der komplexe Abhängigkeiten zwischen Tasks verwaltet, Prioritäten berücksichtigt und Tasks auf verfügbare Ressourcen verteilt.
+
+
+13. Implementiere ein System zur Musikanalyse, das Audio-Dateien verarbeitet, Noten erkennt, Akkorde identifiziert und eine MIDI-Ausgabe generiert.
+
+
+14. Erstelle ein Framework für künstliche neuronale Netze mit verschiedenen Netzwerkarchitekturen, Aktivierungsfunktionen und Trainingsalgorithmen.
+
+
+15. Entwickle ein System zur Verwaltung und Analyse von Netzwerkverkehr mit Paketanalyse, Protokollerkennung und statistischer Auswertung.
+
+
+16. Implementiere ein verteiltes Dateisystem mit Replikation, Fehlertoleranz und automatischer Lastverteilung.
+
+
+17. Erstelle ein System zur automatischen Generierung von Testfällen basierend auf Codeanalyse und Abhängigkeitsgraphen.
+
+
+18. Entwickle einen Parser für reguläre Ausdrücke mit Unterstützung für erweiterte Funktionen wie Lookbehind/Lookahead und bedingte Ausdrücke.
+
+
+19. Implementiere ein System zur Zeitreihenanalyse mit verschiedenen Vorhersagemodellen, Trendanalysen und Anomalieerkennung.
+
+
+20. Erstelle ein System zur 3D-Grafikverarbeitung mit Unterstützung für verschiedene Dateiformate, Transformationen und Rendering-Algorithmen.
+
+
+21. Entwickle ein System zur natürlichen Sprachverarbeitung mit Funktionen wie POS-Tagging, Named Entity Recognition und Sentiment-Analyse.
+
+
+22. Implementiere ein verteiltes Cache-System mit verschiedenen Eviction-Strategien, Konsistenzprotokollen und Monitoring.
+
+
+23. Erstelle ein System zur automatischen Code-Optimierung mit Analyse von Performance-Bottlenecks und Vorschlägen für Verbesserungen.
+
+
+24. Entwickle ein System zur Verwaltung von Container-Images mit Layer-Management, Dependency-Resolution und automatischem Building.
+
+
+25. Implementiere ein System zur Verarbeitung von Streaming-Daten mit verschiedenen Windowing-Strategien und Aggregationsfunktionen.
+
+
+26. Erstelle ein Framework für die Entwicklung von Kommandozeilen-Tools mit Plugin-System, Auto-Completion und interaktivem Modus.
+
+
+27. Entwickle ein System zur automatischen API-Dokumentation mit Unterstützung für verschiedene Protokolle und Authentifizierungsmethoden.
+
+
+28. Implementiere ein System zur Verwaltung von Datenbank-Migrationen mit Rollback-Funktionalität und automatischer Konflikterkennung.
+
+
+29. Erstelle ein System zur Generierung von Mockdaten basierend auf Datenbankschema und benutzerdefinierten Regeln.
+
+
+30. Entwickle ein System zur automatischen Code-Generierung aus UML-Diagrammen mit Unterstützung für verschiedene Design Patterns.
+
+
+31. Implementiere ein System zur Verwaltung von Microservices mit Service Discovery, Load Balancing und Circuit Breaking.
+
+
+32. Erstelle ein System zur automatischen Erkennung und Klassifizierung von Code-Smells mit Refactoring-Vorschlägen.
+
+
+33. Entwickle ein System zur Verwaltung von Build-Prozessen mit Dependency-Management und paralleler Ausführung.
+
+
+34. Implementiere ein System zur Analyse von Programmabhängigkeiten mit Visualisierung und Impact-Analyse.
+
+
+35. Erstelle ein System zur automatischen Generierung von REST-APIs aus Datenbankschema mit Validierung und Dokumentation.
+
+
+36. Entwickle ein System zur Verwaltung von verteilten Transaktionen mit Two-Phase Commit und Recovery.
+
+
+37. Implementiere ein System zur automatischen Performance-Messung mit Profiling und Bottleneck-Analyse.
+
+
+38. Erstelle ein System zur Verwaltung von Feature Flags mit A/B Testing und gradueller Einführung.
+
+
+39. Entwickle ein System zur automatischen Code-Review mit statischer Analyse und Style-Checking.
+
+
+40. Implementiere ein System zur Verwaltung von verteilten Locks mit Deadlock-Erkennung und automatischer Auflösung.

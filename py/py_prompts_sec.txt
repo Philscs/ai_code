@@ -1,0 +1,118 @@
+1. "Entwickle ein System zur Überwachung von Netzwerkverbindungen, das TCP/IP-Pakete analysiert, verdächtige Muster erkennt und Warnungen in einer verschlüsselten Log-Datei speichert. Berücksichtige dabei die Behandlung von Race Conditions bei gleichzeitigen Verbindungen und implementiere eine sichere Methode zur Authentifizierung von Administratorzugriffen."
+
+
+2. "Erstelle einen asynchronen Datei-Crawler, der rekursiv Verzeichnisse durchsucht, Dateien nach benutzerdefinierten Kriterien filtert und die Ergebnisse in einer SQLite-Datenbank speichert. Implementiere dabei Mechanismen zur Vermeidung von Symbolic Link-Attacken und stelle sicher, dass keine sensiblen Systembereiche durchsucht werden."
+
+
+3. "Implementiere einen REST-API-Server mit JWT-Authentifizierung, Rate Limiting und automatischer API-Dokumentation. Der Server soll Benutzeranfragen validieren, SQL-Injektionen verhindern und eine sichere Passwort-Speicherung mittels Argon2 gewährleisten."
+
+
+4. "Entwickle einen Multi-Threading-fähigen Web Scraper, der dynamisch geladene Inhalte verarbeiten kann, Proxy-Rotation unterstützt und die gescrapten Daten in verschiedenen Formaten exportiert. Implementiere dabei Maßnahmen gegen IP-Blocking und respektiere robots.txt."
+
+
+5. "Erstelle ein Backup-System, das inkrementelle Backups erstellt, Dateien verschlüsselt und auf verschiedene Cloud-Speicher synchronisiert. Implementiere dabei eine sichere Schlüsselverwaltung und stelle sicher, dass temporäre Dateien sicher gelöscht werden."
+
+
+6. "Entwickle eine Bibliothek zur Bildverarbeitung, die EXIF-Daten bereinigt, Wasserzeichen hinzufügt und Bilder basierend auf Machine Learning-Algorithmen kategorisiert. Berücksichtige dabei die sichere Handhabung von Dateitypen und implementiere Schutz gegen Pixel-Flood-Attacken."
+
+
+7. "Implementiere einen Message Broker mit Pub/Sub-Mechanismus, persistenter Speicherung und Dead-Letter-Queue. Stelle dabei sicher, dass die Nachrichtenübermittlung verschlüsselt erfolgt und implementiere Mechanismen zur Erkennung von Message-Replay-Attacken."
+
+
+8. "Entwickle ein System zur Protokollierung und Analyse von Systemereignissen mit konfigurierbaren Alarmierungen. Implementiere dabei eine sichere Rotation der Log-Dateien und stelle sicher, dass sensitive Informationen nicht im Klartext gespeichert werden."
+
+
+9. "Erstelle einen Cache-Manager mit LRU-Strategie, der verschiedene Backend-Speicher unterstützt und Thread-safe ist. Implementiere dabei Mechanismen zur Vermeidung von Cache-Poisoning und stelle sicher, dass der Speicherverbrauch kontrolliert wird."
+
+
+10. "Implementiere einen Custom Authentication Provider, der verschiedene Authentifizierungsmethoden (LDAP, OAuth, SAML) unterstützt und Single Sign-On ermöglicht. Berücksichtige dabei Session-Management und implementiere Schutz gegen Session-Fixation-Attacken."
+
+
+11. "Entwickle einen ETL-Prozess, der Daten aus verschiedenen Quellen extrahiert, transformiert und in ein Data Warehouse lädt. Implementiere dabei Datenvalidierung, Fehlerbehandlung und stelle sicher, dass sensitive Daten während der Verarbeitung geschützt sind."
+
+
+12. "Erstelle einen Task-Scheduler, der wiederkehrende Aufgaben verwaltet, Abhängigkeiten zwischen Tasks berücksichtigt und fehlgeschlagene Tasks automatisch wiederholt. Implementiere dabei eine sichere Speicherung von Task-Credentials und verhindere Task-Injection-Attacken."
+
+
+13. "Implementiere einen Custom Logging Handler, der Log-Ereignisse filtert, aggregiert und an verschiedene Ziele weiterleitet. Stelle dabei sicher, dass Log-Injection-Attacken verhindert werden und sensitive Daten maskiert werden."
+
+
+14. "Entwickle eine Wrapper-Klasse für subprocess-Aufrufe, die Command Injection verhindert, Timeouts implementiert und Ressourcenlimits durchsetzt. Stelle sicher, dass keine Shell-Injections möglich sind und implementiere eine sichere Behandlung von Umgebungsvariablen."
+
+
+15. "Erstelle einen Custom Context Manager für den sicheren Umgang mit Ressourcen, der Cleanup-Operationen garantiert und Ressourcenlecks verhindert. Implementiere dabei Exception-Handling und stelle sicher, dass sensitive Daten im finally-Block bereinigt werden."
+
+
+16. "Implementiere einen Konfigurations-Manager, der verschiedene Konfigurationsquellen unterstützt, Umgebungsvariablen sicher einbindet und sensitive Konfigurationswerte verschlüsselt. Stelle sicher, dass keine sensitiven Daten geloggt werden."
+
+
+17. "Entwickle einen Custom Metaclass für die automatische Validierung von Klassenattributen, der Type Hints überprüft und Invarianten durchsetzt. Implementiere dabei sichere Serialisierung und verhindere Code-Injection über dynamische Attributzuweisungen."
+
+
+18. "Erstelle einen Memory-Profiler, der Speicherverbrauch von Objekten analysiert, Speicherlecks erkennt und Warnungen generiert. Implementiere dabei sichere Cleanup-Mechanismen und stelle sicher, dass keine sensiblen Speicherbereiche zugänglich sind."
+
+
+19. "Implementiere einen Custom Iterator für die pagewise Verarbeitung großer Datensätze, der Memory-Mapping nutzt und Ressourcen effizient verwaltet. Stelle sicher, dass Dateizugriffe sicher erfolgen und implementiere Schutz gegen Directory Traversal."
+
+
+20. "Entwickle einen Plugin-Manager, der Plugins dynamisch lädt, Abhängigkeiten auflöst und Versionskonflikte erkennt. Implementiere dabei sichere Code-Ausführung in Sandboxen und verhindere das Laden von manipulierten Plugins."
+
+
+21. "Erstelle eine Framework-agnostische Middleware für Request-Validierung, die XSS-Attacken verhindert, CORS konfiguriert und Security-Header setzt. Implementiere dabei eine sichere Session-Verwaltung und CSRF-Schutz."
+
+
+22. "Implementiere einen Custom Decorator für Method-Caching, der Cache-Invalidierung unterstützt, Race Conditions verhindert und Thread-safe ist. Stelle sicher, dass der Cache keine sensitiven Daten speichert."
+
+
+23. "Entwickle einen Fuzzy-Search-Algorithmus mit Levenshtein-Distanz, der große Textmengen effizient durchsucht und Ähnlichkeitsmetriken berechnet. Implementiere dabei DoS-Schutz bei komplexen Suchmustern."
+
+
+24. "Erstelle einen Stream-Processor für die Echtzeitverarbeitung von Sensordaten, der Anomalien erkennt, Daten aggregiert und Alerts generiert. Implementiere dabei sichere Datenpersistenz und verhindere Buffer Overflows."
+
+
+25. "Implementiere einen Custom Type Checker, der statische Typüberprüfungen durchführt, benutzerdefinierte Constraints validiert und Type Coercion verhindert. Stelle sicher, dass keine unsicheren Typkonvertierungen möglich sind."
+
+
+26. "Entwickle eine Bibliothek für sichere mathematische Berechnungen, die Overflow-Checking implementiert, NaN-Werte behandelt und numerische Stabilität gewährleistet. Implementiere dabei Schutz gegen Floating-Point-Attacken."
+
+
+27. "Erstelle einen Template-Engine mit Custom Tags, der Template-Injection verhindert, Context-Escaping implementiert und recursive Template-Inclusion unterstützt. Stelle sicher, dass keine Server-Side Template Injection möglich ist."
+
+
+28. "Implementiere einen Custom XML-Parser, der XXE-Attacken verhindert, Namespace-Handling unterstützt und große Dokumente streamed verarbeitet. Stelle sicher, dass keine XML-Bombs verarbeitet werden."
+
+
+29. "Entwickle einen Job-Queue-Manager mit Priority-Scheduling, der Failed Jobs behandelt, Job-Timeouts implementiert und Ressourcenlimits durchsetzt. Implementiere dabei sichere Job-Serialisierung und verhindere Command Injection."
+
+
+30. "Erstelle einen Custom ORM mit Lazy Loading, der SQL-Injection verhindert, Connection Pooling implementiert und Transaktionen sicher verwaltet. Stelle sicher, dass keine sensitiven Daten im Query Cache landen."
+
+
+31. "Implementiere einen Generic Data Validator, der komplexe Validierungsregeln unterstützt, Custom Constraints erlaubt und Fehlermeldungen lokalisiert. Stelle sicher, dass keine unsicheren Validierungsmuster möglich sind."
+
+
+32. "Entwickle einen Custom Protocol Handler für binäre Netzwerkprotokolle, der Puffer-Überläufe verhindert, Timeouts implementiert und Protokoll-Violations erkennt. Implementiere dabei sichere Serialisierung und Deserialisierung."
+
+
+33. "Erstelle einen Memory-mapped File Handler für die effiziente Verarbeitung großer Dateien, der Datei-Locking implementiert und atomare Operationen unterstützt. Stelle sicher, dass keine Race Conditions bei gleichzeitigem Zugriff auftreten."
+
+
+34. "Implementiere einen Custom Exception Handler, der Stack Traces bereinigt, sensitive Informationen filtert und strukturierte Fehlerprotokolle erstellt. Stelle sicher, dass keine internen Systeminformationen nach außen gelangen."
+
+
+35. "Entwickle einen Dependency Injector mit Circular Dependency Detection, der Lifecycle-Management implementiert und Scope-Isolation gewährleistet. Implementiere dabei sichere Service-Lokalisierung und verhindere Prototype Pollution."
+
+
+36. "Erstelle einen Custom Event Dispatcher mit Event Sourcing, der Event-Replay unterstützt, Dead-Letter-Handling implementiert und Event-Ordering garantiert. Stelle sicher, dass keine Event-Loop-Deadlocks auftreten."
+
+
+37. "Implementiere einen Rate Limiter mit verschiedenen Strategien (Token Bucket, Leaky Bucket), der verteiltes Rate Limiting unterstützt und DoS-Schutz bietet. Stelle sicher, dass keine Race Conditions bei der Token-Verwaltung auftreten."
+
+
+38. "Entwickle einen Custom Serializer für komplexe Objektstrukturen, der zyklische Referenzen behandelt, Versionierung unterstützt und Type Safety gewährleistet. Implementiere dabei sichere Deserialisierung und verhindere Object Injection."
+
+
+39. "Erstelle einen Thread Pool Manager mit Work Stealing, der Thread-Leaks verhindert, Worker-Recycling implementiert und Thread-Isolation gewährleistet. Stelle sicher, dass keine Thread-Safety-Violations auftreten."
+
+
+40. "Implementiere einen Custom Bytecode Generator für Domain-Specific Languages, der Code-Injection verhindert, Sandbox-Execution unterstützt und Ressourcenlimits durchsetzt. Stelle sicher, dass keine unsicheren Bytecode-Sequenzen generiert werden."‚
