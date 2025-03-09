@@ -1,29 +1,103 @@
-name: SonarQube
+name: SonarCloud Multi-Language Analysis
+
 on:
   push:
-    branches:
-      - main
+    branches: [ "main" ]
   pull_request:
-    types: [opened, synchronize, reopened]
+    branches: [ "main" ]
+  workflow_dispatch:  # Allows manual triggering
+
 jobs:
-  build:
-    name: Build and analyze
-    runs-on: macos-latest
-    env:
-      BUILD_WRAPPER_OUT_DIR: build_wrapper_output_directory # Directory where build-wrapper output will be placed
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Install Build Wrapper
-        uses: SonarSource/sonarqube-scan-action/install-build-wrapper@v5
-      - name: Run Build Wrapper
+          fetch-depth: 0  # Shallow clones should be disabled for better relevancy of analysis
+      
+      # Set up required tools
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: 'temurin'
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      
+      # Install dependencies for different languages
+      - name: Install Python dependencies
         run: |
-          build-wrapper-macosx-x86 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} make clean all
-      - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v5
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install coverage pytest pytest-cov
+      
+      - name: Install JavaScript dependencies
+        run: |
+          if [ -f package.json ]; then npm ci || npm install; fi
+          npm install -g jest jest-sonar-reporter || true
+      
+      # Run tests and generate coverage reports for each language
+      - name: Run Python tests with coverage
+        run: |
+          python -m pytest --cov=. --cov-report=xml:coverage-python.xml || true
+      
+      - name: Run JavaScript tests with coverage
+        run: |
+          if [ -f package.json ]; then 
+            npm test -- --coverage --testResultsProcessor=jest-sonar-reporter || true
+          fi
+      
+      - name: Compile C code and generate coverage
+        run: |
+          if [ -f Makefile ]; then
+            make clean || true
+            make || true
+            # If you have tests with gcov coverage:
+            make test || true
+            find . -name "*.gcno" -o -name "*.gcda" | xargs gcov -pb || true
+          fi
+      
+      # Create sonar-project.properties file
+      - name: Create sonar-project.properties
+        run: |
+          cat > sonar-project.properties << EOF
+          sonar.projectKey=${{ github.repository_owner }}_${{ github.event.repository.name }}
+          sonar.organization=philscs
+          
+          # This is the name and version displayed in the SonarCloud UI.
+          sonar.projectName=${{ github.event.repository.name }}
+          
+          # Path is relative to the sonar-project.properties file
+          sonar.sources=.
+          sonar.exclusions=**/node_modules/**,**/tests/**,**/test/**,**/__pycache__/**,**/*.pyc,**/*.pyo,**/*.spec.js,**/*.test.js,**/.DS_Store,**/.AppleDouble,**/.LSOverride
+          
+          # Coverage reports
+          sonar.python.coverage.reportPaths=coverage-python.xml
+          sonar.javascript.lcov.reportPaths=coverage/lcov.info
+          sonar.javascript.jstest.reportsPath=test-report.xml
+          
+          # C/C++ settings
+          sonar.c.file.suffixes=.c
+          sonar.cpp.file.suffixes=.cc,.cpp,.cxx,.c++
+          sonar.c.gcov.reportsPath=.
+          EOF
+      
+      # SonarCloud Scan
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}    # Generated in SonarCloud UI
         with:
           args: >
-            --define sonar.cfamily.compile-commands="${{ env.BUILD_WRAPPER_OUT_DIR }}/compile_commands.json"
+            -Dsonar.organization=philscs
+            -Dsonar.projectKey=${{ github.repository_owner }}_${{ github.event.repository.name }}
