@@ -65,21 +65,21 @@ jobs:
             npm test -- --coverage --testResultsProcessor=jest-sonar-reporter || true
           fi
       
-      # Compile C code using build-wrapper
+      # Create a simple build script for C files
+      - name: Create build script for C files
+        run: |
+          echo '#!/bin/bash' > build-c-files.sh
+          echo 'mkdir -p build' >> build-c-files.sh
+          echo 'for file in $(find . -name "*.c" -not -path "./node_modules/*" -not -path "./build/*"); do' >> build-c-files.sh
+          echo '  gcc -c "$file" -o "build/$(basename "${file%.c}.o")" || true' >> build-c-files.sh
+          echo 'done' >> build-c-files.sh
+          chmod +x build-c-files.sh
+      
+      # Build C code using build-wrapper
       - name: Build C code with build-wrapper
         run: |
-          if [ -f Makefile ]; then
-            make clean || true
-            # Run the build through build-wrapper
-            build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw-output make all || true
-          else
-            # If no Makefile exists but you have C files
-            mkdir -p bw-output
-            # Find and compile all .c files if no Makefile
-            for c_file in $(find . -name "*.c"); do
-              build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw-output gcc -c "$c_file" -o "${c_file%.c}.o" || true
-            done
-          fi
+          # Run the build through build-wrapper
+          build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw-output ./build-c-files.sh
       
       # Create sonar-project.properties file
       - name: Create sonar-project.properties
@@ -93,39 +93,16 @@ jobs:
           
           # Path is relative to the sonar-project.properties file
           sonar.sources=.
-          sonar.exclusions=**/node_modules/**,**/tests/**,**/test/**,**/__pycache__/**,**/*.pyc,**/*.pyo,**/*.spec.js,**/*.test.js,**/.DS_Store,**/.AppleDouble,**/.LSOverride
+          sonar.exclusions=**/node_modules/**,**/tests/**,**/test/**,**/__pycache__/**,**/*.pyc,**/*.pyo,**/*.spec.js,**/*.test.js,**/.DS_Store,**/.AppleDouble,**/.LSOverride,**/build/**
           
-          # C/C++ configuration
+          # C/C++ configuration - only using build-wrapper, not compile_commands.json
           sonar.cfamily.build-wrapper-output=bw-output
-          sonar.cfamily.cache.enabled=false
-          sonar.cfamily.compile-commands=compile_commands.json
           
           # Coverage reports
           sonar.python.coverage.reportPaths=coverage-python.xml
           sonar.javascript.lcov.reportPaths=coverage/lcov.info
           sonar.javascript.jstest.reportsPath=test-report.xml
           EOF
-      
-      # Attempt to create compile_commands.json if not already present
-      - name: Generate compile_commands.json
-        run: |
-          if [ ! -f compile_commands.json ]; then
-            # Create a minimal compile_commands.json if doesn't exist
-            echo "[" > compile_commands.json
-            for c_file in $(find . -name "*.c"); do
-              echo "{" >> compile_commands.json
-              echo "  \"directory\": \"$(pwd)\"," >> compile_commands.json
-              echo "  \"command\": \"gcc -c $c_file -o ${c_file%.c}.o\"," >> compile_commands.json
-              echo "  \"file\": \"$c_file\"" >> compile_commands.json
-              echo "}," >> compile_commands.json
-            done
-            # Remove the trailing comma from the last entry if files were found
-            if [ -s compile_commands.json ] && [ "$(tail -c 2 compile_commands.json)" = "," ]; then
-              truncate -s -2 compile_commands.json
-              echo "}" >> compile_commands.json
-            fi
-            echo "]" >> compile_commands.json
-          fi
       
       # SonarCloud Scan
       - name: SonarCloud Scan
