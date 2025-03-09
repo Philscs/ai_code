@@ -1,0 +1,176 @@
+1. "Entwickle einen Heap-basierten Prioritäts-Scheduler für Prozesse. Der Scheduler soll dynamischen Speicher nutzen und Prozesse basierend auf Priorität, CPU-Burst-Zeit und Wartezeit verwalten."
+
+
+2. "Implementiere ein Red-Black Tree System zur Verwaltung von Studentendaten. Jeder Knoten soll Matrikelnummer, Name und Notendurchschnitt enthalten. Implementiere alle notwendigen Balancing-Operationen."
+
+
+3. "Erstelle einen Custom Memory Allocator, der Fragmentation minimiert. Der Allocator soll verschiedene Allokationsstrategien (First Fit, Best Fit, Worst Fit) unterstützen und Coalescing implementieren."
+
+
+4. Basis-Code zur Erweiterung:
+```c
+struct Node {
+    void* data;
+    size_t size;
+    struct Node* next;
+};
+
+void* custom_malloc(size_t size) {
+    // Implementierung fehlt
+}
+```
+Erweitere dies zu einem Thread-sicheren Memory Pool mit Garbage Collection.
+
+
+5. "Entwickle ein File System in C, das hierarchische Verzeichnisse, Basic File Operations und Journaling unterstützt. Implementiere eine eigene FAT (File Allocation Table)."
+
+
+6. "Schreibe einen Graph-basierten Pathfinder für ein Netzwerk-Routing-System. Implementiere sowohl Dijkstra als auch A* und vergleiche deren Performance in verschiedenen Szenarien."
+
+
+7. "Erstelle einen komplexen String-Parser, der reguläre Ausdrücke unterstützt. Implementiere Thompson's Konstruktionsalgorithmus für NFAs."
+
+
+8. Implementiere
+```
+Function: Process XML Document
+Input: XML string
+1. Create parse tree
+2. Handle nested elements
+3. Support attributes
+4. Implement XPath-like queries
+```
+
+
+9. "Implementiere einen Lock-Free Ring Buffer für Multi-Producer-Multi-Consumer Szenarien unter Verwendung von atomaren Operationen."
+
+
+10. "Entwickle eine B-Tree Implementierung für eine Datenbank-Engine. Unterstütze Transactions und ACID-Eigenschaften."
+
+
+11. "Erstelle einen eigenen HTTP Server in C mit Support für verschiedene Request Methods, Keep-Alive Connections und Basic Authentication."
+
+
+12. "Implementiere einen Thread Pool mit Work Stealing Algorithmus. Der Pool soll dynamisch skalieren können."
+
+
+13. Basis-Code zur Erweiterung:
+```c
+struct Matrix {
+    double** data;
+    int rows;
+    int cols;
+};
+```
+Erweitere zu einer vollständigen Linear Algebra Bibliothek mit Gauss-Elimination, LU-Decomposition und Eigenwert-Berechnung.
+
+
+14. "Entwickle einen Compile-Time Expression Parser mit Support für arithmetische und logische Operationen."
+
+
+15. "Implementiere ein Garbage Collection System basierend auf Mark-and-Sweep mit Support für Zyklenerkennung."
+
+
+16. "Erstelle einen JPEG Encoder/Decoder mit DCT Transformation und Huffman Coding."
+
+
+17. "Entwickle einen Cache-Controller mit LRU, FIFO und Clock Algorithmen. Implementiere Write-Through und Write-Back Strategien."
+
+
+18. "Implementiere ein Shared Memory IPC System mit Semaphoren und Message Queues."
+
+
+19. Implementiere in C:
+```
+System: Real-time Task Scheduler
+- Fixed priority preemptive scheduling
+- Deadline monitoring
+- Resource management
+- Priority inheritance
+```
+
+
+20. "Erstelle einen vollständigen TCP/IP Stack mit Congestion Control und Flow Control."
+
+
+21. "Entwickle einen Unicode-aware Text Editor mit Undo/Redo Funktionalität und Syntax Highlighting."
+
+
+22. "Implementiere ein Virtual Memory Management System mit Paging und Page Replacement Algorithmen."
+
+
+23. "Erstelle einen Bytecode Interpreter für eine simple Stack-basierte Virtual Machine."
+
+
+24. "Entwickle ein Bloom Filter basiertes Caching-System mit konfigurierbarer False Positive Rate."
+
+
+25. Basis-Code zur Erweiterung:
+```c
+struct HashTable {
+    struct Entry** buckets;
+    size_t size;
+    size_t used;
+};
+```
+Erweitere zu einer Concurrent Hash Table mit automatischem Resizing.
+
+
+26. "Implementiere einen Audio-Streaming Buffer mit Real-time Processing Capabilities."
+
+
+27. "Erstelle einen Custom Protocol Stack für IoT Devices mit minimalen Ressourcenanforderungen."
+
+
+28. "Entwickle einen Pattern Matching Algorithmus basierend auf Suffix Trees."
+
+
+29. "Implementiere ein Software Transactional Memory System."
+
+
+30. "Erstelle einen Zero-Copy Network Stack mit DMA Support."
+
+
+31. Implementiere in C:
+```
+Database Index System:
+1. B+ Tree implementation
+2. Query optimization
+3. Concurrent access support
+4. Recovery management
+```
+
+
+32. "Entwickle einen JIT Compiler für eine subset von C."
+
+
+33. "Implementiere ein Distributed Lock Management System."
+
+
+34. "Erstelle einen Event-driven Network Server mit epoll/kqueue Support."
+
+
+35. "Entwickle einen Custom Malloc mit Support für große Pages und NUMA-awareness."
+
+
+36. Basis-Code zur Erweiterung in C:
+```c
+struct Coroutine {
+    void* stack;
+    void* context;
+    int state;
+};
+```
+Erweitere zu einem vollständigen Coroutine-System mit Scheduling.
+
+
+37. "Implementiere einen Log-structured Merge Tree für Key-Value Storage."
+
+
+38. "Erstelle einen SIMD-optimierten Image Processing Pipeline."
+
+
+39. "Entwickle einen Custom Shell Interpreter mit Job Control und Pipeline Support."
+
+
+40. "Implementiere ein Filesystem im Userspace mit FUSE Interface."

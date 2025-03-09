@@ -1,0 +1,300 @@
+1. "Implementieren Sie einen sicheren Speicher-Pool-Allocator für eine eingebettete Anwendung. Der Allocator soll Fragmentierung minimieren und Buffer Overflows erkennen. Implementieren Sie Boundary Tags und Double-Free Detection. Der Allocator soll für Blöcke von 32 Bytes bis 4KB ausgelegt sein."
+
+
+2. "Entwickeln Sie eine Thread-sichere Queue-Implementierung mit Mutex-Locks. Die Queue soll atomic operations nutzen und Priority Inversion vermeiden. Implementieren Sie zusätzlich Deadlock-Detection und Recovery-Mechanismen."
+
+
+3. "Schreiben Sie einen sicheren File Parser für ein proprietäres Binärformat. Der Parser muss robust gegen malformed Input sein und Integer Overflow checking implementieren. Basis-Struktur:
+```c
+struct file_header {
+    uint32_t magic;
+    uint32_t version;
+    uint32_t data_size;
+    uint8_t  checksum[32];
+};
+```
+Validieren Sie alle Eingaben und implementieren Sie sichere Grenzchecks."
+
+
+4. "Entwickeln Sie einen Memory-Safe String Handler mit eigener String-Struktur:
+```c
+typedef struct {
+    char* data;
+    size_t length;
+    size_t capacity;
+} safe_string;
+```
+Implementieren Sie alle Standard-String-Operationen (concat, substring, etc.) mit vollständiger Bounds-Checking und Overflow-Protection."
+
+
+5. "Implementieren Sie einen sicheren Network Packet Parser für ein industrielles Protokoll. Der Parser muss gegen Packet Injection und Buffer Overflow resistent sein. Nutzen Sie State Machines für die Protokoll-Validierung und implementieren Sie CRC32-Prüfungen."
+
+
+6. "Erstellen Sie eine sichere Implementierung eines Red-Black Trees mit Audit-Logging. Alle Operationen müssen Thread-safe sein und Invalid Memory Access verhindern. Implementieren Sie zusätzlich eine Serialisierungsfunktion mit Validierung."
+
+
+7. "Entwickeln Sie einen Stack-basierten Expression Evaluator für mathematische Formeln. Implementieren Sie Schutz gegen Stack Overflow und Division by Zero. Der Evaluator soll auch mit User Input arbeiten können und muss gegen Injection attacks geschützt sein."
+
+
+8. "Schreiben Sie einen sicheren Configuration File Parser mit Verschlüsselung sensitiver Daten. Implementieren Sie Schutz gegen:
+- Format String Attacks
+- Buffer Overflows
+- Directory Traversal
+- Race Conditions beim File Access"
+
+
+9. "Implementieren Sie einen Memory-Safe Matrix Manipulator für große Datensets:
+```c
+typedef struct {
+    double** data;
+    size_t rows;
+    size_t cols;
+    bool is_initialized;
+} safe_matrix;
+```
+Alle Operationen müssen Boundary Checks durchführen und Integer Overflows verhindern."
+
+
+10. "Entwickeln Sie einen sicheren IPC (Inter-Process Communication) Mechanismus mit Shared Memory. Implementieren Sie:
+- Mutex-basierte Synchronisation
+- Memory Protection
+- Deadlock Prevention
+- Cleanup bei Process Termination"
+
+
+11. "Erstellen Sie einen robusten Command Line Parser mit Argument Validation:
+- Keine Buffer Overflows bei zu langen Argumenten
+- Schutz gegen Command Injection
+- Sichere Konvertierung von String zu numerischen Typen
+- Logging aller Eingaben für Audit-Zwecke"
+
+
+12. "Implementieren Sie einen sicheren Custom Memory Manager mit Garbage Collection:
+- Referenz Counting
+- Cycle Detection
+- Defragmentierung
+- Memory Leak Detection
+- Use-After-Free Prevention"
+
+
+13. "Entwickeln Sie eine Thread-Pool Implementierung mit Work Stealing:
+- Sichere Queue Implementierung
+- Thread Sanitization
+- Resource Limiting
+- Deadlock Prevention
+- Task Prioritization"
+
+
+14. "Schreiben Sie einen sicheren Base64 Encoder/Decoder mit zusätzlichen Sicherheitsfeatures:
+- Input Validation
+- Padding Validation
+- Memory Safe Operations
+- Schutz gegen Format String Vulnerabilities"
+
+
+15. "Implementieren Sie einen Custom Logger mit Rotation und Encryption:
+- Atomic File Operations
+- Secure File Permissions
+- Race Condition Prevention
+- Buffer Management
+- Compression Option"
+
+
+16. "Entwickeln Sie einen sicheren Hash Table mit Collision Resolution:
+- Thread Safety
+- Dynamic Resizing
+- Integer Overflow Protection
+- Secure Hash Function Implementation
+- Iterator Safety"
+
+
+17. "Erstellen Sie einen Binary Search Tree mit AVL-Balancing und Sicherheitsfeatures:
+- Memory Leak Prevention
+- Thread Safety
+- Secure Node Deletion
+- Boundary Checking
+- Iteration Safety"
+
+
+18. "Implementieren Sie einen sicheren Process Monitor:
+- Resource Usage Tracking
+- Secure IPC
+- Signal Handling
+- Memory Leak Detection
+- Privilege Separation"
+
+
+19. "Entwickeln Sie einen Custom Allocator für Fixed-Size Blocks:
+- Memory Alignment
+- Boundary Tags
+- Use-After-Free Detection
+- Memory Poisoning
+- Thread Safety"
+
+
+20. "Schreiben Sie einen sicheren File System Walker:
+- Symbolic Link Safety
+- Permission Checking
+- Path Sanitization
+- Memory Management
+- Error Recovery"
+
+
+21. "Implementieren Sie einen Custom Signal Handler:
+- Async-Signal-Safe Functions
+- Stack Overflow Protection
+- Resource Cleanup
+- State Recovery
+- Logging Mechanism"
+
+
+22. "Entwickeln Sie einen Thread-Safe Ring Buffer:
+- Atomic Operations
+- Memory Barriers
+- Overflow Protection
+- Underflow Protection
+- Error Handling"
+
+
+23. "Erstellen Sie einen sicheren DNS Query Parser:
+- Buffer Overflow Prevention
+- Protocol Validation
+- Memory Management
+- Error Handling
+- Logging System"
+
+
+24. "Implementieren Sie einen Custom Memory Pool für Real-Time Systeme:
+- Deterministic Allocation
+- Fragmentation Prevention
+- Thread Safety
+- Memory Protection
+- Error Detection"
+
+
+25. "Entwickeln Sie einen sicheren Message Queue Handler:
+- Priority Management
+- Memory Safety
+- Thread Synchronization
+- Error Recovery
+- Resource Management"
+
+
+26. "Schreiben Sie einen Custom Protocol Parser:
+- State Machine
+- Buffer Management
+- Error Recovery
+- Logging System
+- Security Validation"
+
+
+27. "Implementieren Sie einen sicheren File Cache:
+- Thread Safety
+- Memory Management
+- Cache Invalidation
+- Error Handling
+- Resource Limiting"
+
+
+28. "Entwickeln Sie einen Custom Memory Debugger:
+- Leak Detection
+- Use-After-Free Detection
+- Buffer Overflow Detection
+- Stack Trace
+- Report Generation"
+
+
+29. "Erstellen Sie einen Thread-Safe Object Pool:
+- Memory Management
+- Thread Synchronization
+- Resource Limiting
+- Error Handling
+- Cleanup Mechanism"
+
+
+30. "Implementieren Sie einen sicheren Config File Generator:
+- Template System
+- Input Validation
+- Error Handling
+- Secure File Operations
+- Logging System"
+
+
+31. "Entwickeln Sie einen Custom Process Scheduler:
+- Priority Management
+- Resource Tracking
+- Thread Safety
+- Error Recovery
+- Logging System"
+
+
+32. "Schreiben Sie einen sicheren Memory Mapped File Handler:
+- Permission Management
+- Memory Protection
+- Error Handling
+- Resource Cleanup
+- Logging System"
+
+
+33. "Implementieren Sie einen Custom Network Protocol Stack:
+- Buffer Management
+- Error Handling
+- Security Validation
+- Resource Management
+- Logging System"
+
+
+34. "Entwickeln Sie einen sicheren Shared Memory Manager:
+- Permission Management
+- Memory Protection
+- Thread Safety
+- Error Recovery
+- Resource Cleanup"
+
+
+35. "Erstellen Sie einen Custom File System:
+- Permission Management
+- Resource Tracking
+- Error Handling
+- Logging System
+- Recovery Mechanism"
+
+
+36. "Implementieren Sie einen sicheren Process Communication Handler:
+- Message Validation
+- Memory Management
+- Error Recovery
+- Resource Tracking
+- Logging System"
+
+
+37. "Entwickeln Sie einen Custom Memory Compactor:
+- Fragmentation Management
+- Thread Safety
+- Error Recovery
+- Resource Tracking
+- Logging System"
+
+
+38. "Schreiben Sie einen sicheren IPC Message Router:
+- Message Validation
+- Route Management
+- Error Handling
+- Resource Tracking
+- Logging System"
+
+
+39. "Implementieren Sie einen Custom Resource Monitor:
+- Usage Tracking
+- Thread Safety
+- Error Recovery
+- Logging System
+- Alert Mechanism"
+
+
+40. "Entwickeln Sie einen sicheren Multi-Process Logger:
+- File Management
+- Thread Safety
+- Error Recovery
+- Resource Tracking
+- Rotation System"
